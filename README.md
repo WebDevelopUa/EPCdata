@@ -2,38 +2,43 @@
 
 ## 	Electric power consumption Data filter for Individual household
 
-------
+
+
+
 
 ### Data Set Information:
-This archive contains 2075259 measurements gathered between December 2006 and November 2010 (47 months).  
+This archive contains 2075259 measurements gathered between December 2006 and November 2010 (47 months).В  
+
+
 
 #### Download Individual household electric power consumption Data Set: 
 
 https://archive.ics.uci.edu/ml/machine-learning-databases/00235/household_power_consumption.zip
 
 
-*Notes*:  
 
-1) (global_active_power*1000/60 - sub_metering_1 - sub_metering_2 - sub_metering_3) represents the active energy consumed every minute (in watt hour) in the household by electrical equipment not measured in sub-meterings 1, 2 and 3.  
+#### *Notes*:В  
+
+1) (global_active_power*1000/60 - sub_metering_1 - sub_metering_2 - sub_metering_3) represents the active energy consumed every minute (in watt hour) in the household by electrical equipment not measured in sub-meterings 1, 2 and 3.В  
 
 2) The dataset contains some missing values in the measurements (nearly 1,25% of the rows). All calendar timestamps are present in the dataset but for some timestamps, the measurement values are missing: a missing value is represented by the absence of value between two consecutive semi-colon attribute separators. For instance, the dataset shows missing values on April 28, 2007.
 
 ### Attribute Information:
 1) **date**: Date in format dd/mm/yyyy
 
-2) **time**: time in format hh:mm:ss  
+2) **time**: time in format hh:mm:ssВ  
 
-3) **global_active_power**: household global minute-averaged active power (in kilowatt)  
+3) **global_active_power**: household global minute-averaged active power (in kilowatt)В  
 
-4) **global_reactive_power**: household global minute-averaged reactive power (in kilowatt)  
+4) **global_reactive_power**: household global minute-averaged reactive power (in kilowatt)В  
 
-5) **voltage**: minute-averaged voltage (in volt)  
+5) **voltage**: minute-averaged voltage (in volt)В  
 
-6) **global_intensity**: household global minute-averaged current intensity (in ampere)  
+6) **global_intensity**: household global minute-averaged current intensity (in ampere)В  
 
-7) **sub_metering_1**: energy sub-metering No. 1 (in watt-hour of active energy). It corresponds to the kitchen, containing mainly a dishwasher, an oven and a microwave (hot plates are not electric but gas powered).  
+7) **sub_metering_1**: energy sub-metering No. 1 (in watt-hour of active energy). It corresponds to the kitchen, containing mainly a dishwasher, an oven and a microwave (hot plates are not electric but gas powered).В  
 
-8) **sub_metering_2**: energy sub-metering No. 2 (in watt-hour of active energy). It corresponds to the laundry room, containing a washing-machine, a tumble-drier, a refrigerator and a light.  
+8) **sub_metering_2**: energy sub-metering No. 2 (in watt-hour of active energy). It corresponds to the laundry room, containing a washing-machine, a tumble-drier, a refrigerator and a light.В  
 
 9) **sub_metering_3**: energy sub-metering No. 3 (in watt-hour of active energy). It corresponds to an electric water-heater and an air-conditioner.
 
@@ -41,60 +46,62 @@ https://archive.ics.uci.edu/ml/machine-learning-databases/00235/household_power_
 ----
 
 
-### Ход выполнения работы
-В ходе выполнения работы необходимо оценить время выполнения поставленной задачи 
+### РҐРѕРґ РІС‹РїРѕР»РЅРµРЅРёСЏ СЂР°Р±РѕС‚С‹
+Р’ С…РѕРґРµ РІС‹РїРѕР»РЅРµРЅРёСЏ СЂР°Р±РѕС‚С‹ РЅРµРѕР±С…РѕРґРёРјРѕ РѕС†РµРЅРёС‚СЊ РІСЂРµРјСЏ РІС‹РїРѕР»РЅРµРЅРёСЏ РїРѕСЃС‚Р°РІР»РµРЅРЅРѕР№ Р·Р°РґР°С‡Рё 
 
- *с использованием массивов NumPy (numpy array) 
-*и фреймов (Python Pandas - DataFrame)
+ * СЃ РёСЃРїРѕР»СЊР·РѕРІР°РЅРёРµРј РјР°СЃСЃРёРІРѕРІ NumPy (numpy array) 
+* Рё С„СЂРµР№РјРѕРІ (Python Pandas - DataFrame)
 
-Для каждой из структур данных нужно выполнить профилирование времени выполнения (используйте **timeit** из одноименного модуля).
+Р”Р»СЏ РєР°Р¶РґРѕР№ РёР· СЃС‚СЂСѓРєС‚СѓСЂ РґР°РЅРЅС‹С… РЅСѓР¶РЅРѕ РІС‹РїРѕР»РЅРёС‚СЊ РїСЂРѕС„РёР»РёСЂРѕРІР°РЅРёРµ РІСЂРµРјРµРЅРё РІС‹РїРѕР»РЅРµРЅРёСЏ (РёСЃРїРѕР»СЊР·СѓР№С‚Рµ **timeit** РёР· РѕРґРЅРѕРёРјРµРЅРЅРѕРіРѕ РјРѕРґСѓР»СЏ).
 
-Загрузить пакет данных с информацией об основных расходах электрической энергии домохозяйствами, собранные в течение 47 месяцев (12.2006 — 11.2010) можно по ссылке:
+Р—Р°РіСЂСѓР·РёС‚СЊ РїР°РєРµС‚ РґР°РЅРЅС‹С… СЃ РёРЅС„РѕСЂРјР°С†РёРµР№ РѕР± РѕСЃРЅРѕРІРЅС‹С… СЂР°СЃС…РѕРґР°С… СЌР»РµРєС‚СЂРёС‡РµСЃРєРѕР№ СЌРЅРµСЂРіРёРё РґРѕРјРѕС…РѕР·СЏР№СЃС‚РІР°РјРё, СЃРѕР±СЂР°РЅРЅС‹Рµ РІ С‚РµС‡РµРЅРёРµ 47 РјРµСЃСЏС†РµРІ (12.2006 вЂ” 11.2010) РјРѕР¶РЅРѕ РїРѕ СЃСЃС‹Р»РєРµ:
 
 https://archive.ics.uci.edu/ml/machine-learning-databases/00235/household_power_consumption.zip
 
-### Перечень атрибутивной информации:
-1) **date**: дата измерения в формате dd / mm / yyyy
-2) **time**: время в формате hh: mm: ss
-3) **global_active_power**: активная мощность, которую потребляет домохозяйство в минуту (усредненно) [кВт]
-4) **global_reactive_power**: реактивная мощность, которую потребляет домохозяйство в минуту (усредненно) [кВт]
-5) **voltage**: напряжение, усредненная в минуту наблюдения [В]
-6) **global_intensity**: усредненная силу тока для домохозяйства [A]
-7) **sub_metering_1**: набор потребителей энергии №1 [Вт-часов активной энергии], соответствует кухни, на которой машина для мытья посуды на микроволновка (электрической плиты нет, используется газовая).
-8) **sub_metering_2**: набор потребителей энергии №2 [Вт-часов активной энергии], ответил прачечной, в которой работает стиральная машина, сушилка, холодильных и включен свет.
-9) **sub_metering_3**: набор потребителей энергии №3 [Вт-часов активной энергии], соответствует бойлера и кондиционеру.
+### РџРµСЂРµС‡РµРЅСЊ Р°С‚СЂРёР±СѓС‚РёРІРЅРѕР№ РёРЅС„РѕСЂРјР°С†РёРё:
+1) **date**: РґР°С‚Р° РёР·РјРµСЂРµРЅРёСЏ РІ С„РѕСЂРјР°С‚Рµ dd / mm / yyyy
+2) **time**: РІСЂРµРјСЏ РІ С„РѕСЂРјР°С‚Рµ hh: mm: ss
+3) **global_active_power**: Р°РєС‚РёРІРЅР°СЏ РјРѕС‰РЅРѕСЃС‚СЊ, РєРѕС‚РѕСЂСѓСЋ РїРѕС‚СЂРµР±Р»СЏРµС‚ РґРѕРјРѕС…РѕР·СЏР№СЃС‚РІРѕ РІ РјРёРЅСѓС‚Сѓ (СѓСЃСЂРµРґРЅРµРЅРЅРѕ) [РєР’С‚]
+4) **global_reactive_power**: СЂРµР°РєС‚РёРІРЅР°СЏ РјРѕС‰РЅРѕСЃС‚СЊ, РєРѕС‚РѕСЂСѓСЋ РїРѕС‚СЂРµР±Р»СЏРµС‚ РґРѕРјРѕС…РѕР·СЏР№СЃС‚РІРѕ РІ РјРёРЅСѓС‚Сѓ (СѓСЃСЂРµРґРЅРµРЅРЅРѕ) [РєР’С‚]
+5) **voltage**: РЅР°РїСЂСЏР¶РµРЅРёРµ, СѓСЃСЂРµРґРЅРµРЅРЅР°СЏ РІ РјРёРЅСѓС‚Сѓ РЅР°Р±Р»СЋРґРµРЅРёСЏ [Р’]
+6) **global_intensity**: СѓСЃСЂРµРґРЅРµРЅРЅР°СЏ СЃРёР»Сѓ С‚РѕРєР° РґР»СЏ РґРѕРјРѕС…РѕР·СЏР№СЃС‚РІР° [A]
+7) **sub_metering_1**: РЅР°Р±РѕСЂ РїРѕС‚СЂРµР±РёС‚РµР»РµР№ СЌРЅРµСЂРіРёРё в„–1 [Р’С‚-С‡Р°СЃРѕРІ Р°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё], СЃРѕРѕС‚РІРµС‚СЃС‚РІСѓРµС‚ РєСѓС…РЅРё, РЅР° РєРѕС‚РѕСЂРѕР№ РјР°С€РёРЅР° РґР»СЏ РјС‹С‚СЊСЏ РїРѕСЃСѓРґС‹ РЅР° РјРёРєСЂРѕРІРѕР»РЅРѕРІРєР° (СЌР»РµРєС‚СЂРёС‡РµСЃРєРѕР№ РїР»РёС‚С‹ РЅРµС‚, РёСЃРїРѕР»СЊР·СѓРµС‚СЃСЏ РіР°Р·РѕРІР°СЏ).
+8) **sub_metering_2**: РЅР°Р±РѕСЂ РїРѕС‚СЂРµР±РёС‚РµР»РµР№ СЌРЅРµСЂРіРёРё в„–2 [Р’С‚-С‡Р°СЃРѕРІ Р°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё], РѕС‚РІРµС‚РёР» РїСЂР°С‡РµС‡РЅРѕР№, РІ РєРѕС‚РѕСЂРѕР№ СЂР°Р±РѕС‚Р°РµС‚ СЃС‚РёСЂР°Р»СЊРЅР°СЏ РјР°С€РёРЅР°, СЃСѓС€РёР»РєР°, С…РѕР»РѕРґРёР»СЊРЅС‹С… Рё РІРєР»СЋС‡РµРЅ СЃРІРµС‚.
+9) **sub_metering_3**: РЅР°Р±РѕСЂ РїРѕС‚СЂРµР±РёС‚РµР»РµР№ СЌРЅРµСЂРіРёРё в„–3 [Р’С‚-С‡Р°СЃРѕРІ Р°РєС‚РёРІРЅРѕР№ СЌРЅРµСЂРіРёРё], СЃРѕРѕС‚РІРµС‚СЃС‚РІСѓРµС‚ Р±РѕР№Р»РµСЂР° Рё РєРѕРЅРґРёС†РёРѕРЅРµСЂСѓ.
 
 
 
-Выполнить все задания, используя   **numpy array**, так и **dataframe**, проанализировать временные затраты на выполнение процедур (профилирования времени выполнения), сделать выводы относительно ситуаций, в которых имеет смысл отдать предпочтение той или иной структуре данных. Выводы оформить отчетом с указанным временем выполнения и оценке по 5-балльной шкале удобства выполнения операций отбора).
+Р’С‹РїРѕР»РЅРёС‚СЊ РІСЃРµ Р·Р°РґР°РЅРёСЏ, РёСЃРїРѕР»СЊР·СѓСЏ   **numpy array**, С‚Р°Рє Рё **dataframe**, РїСЂРѕР°РЅР°Р»РёР·РёСЂРѕРІР°С‚СЊ РІСЂРµРјРµРЅРЅС‹Рµ Р·Р°С‚СЂР°С‚С‹ РЅР° РІС‹РїРѕР»РЅРµРЅРёРµ РїСЂРѕС†РµРґСѓСЂ (РїСЂРѕС„РёР»РёСЂРѕРІР°РЅРёСЏ РІСЂРµРјРµРЅРё РІС‹РїРѕР»РЅРµРЅРёСЏ), СЃРґРµР»Р°С‚СЊ РІС‹РІРѕРґС‹ РѕС‚РЅРѕСЃРёС‚РµР»СЊРЅРѕ СЃРёС‚СѓР°С†РёР№, РІ РєРѕС‚РѕСЂС‹С… РёРјРµРµС‚ СЃРјС‹СЃР» РѕС‚РґР°С‚СЊ РїСЂРµРґРїРѕС‡С‚РµРЅРёРµ С‚РѕР№ РёР»Рё РёРЅРѕР№ СЃС‚СЂСѓРєС‚СѓСЂРµ РґР°РЅРЅС‹С…. Р’С‹РІРѕРґС‹ РѕС„РѕСЂРјРёС‚СЊ РѕС‚С‡РµС‚РѕРј СЃ СѓРєР°Р·Р°РЅРЅС‹Рј РІСЂРµРјРµРЅРµРј РІС‹РїРѕР»РЅРµРЅРёСЏ Рё РѕС†РµРЅРєРµ РїРѕ 5-Р±Р°Р»Р»СЊРЅРѕР№ С€РєР°Р»Рµ СѓРґРѕР±СЃС‚РІР° РІС‹РїРѕР»РЅРµРЅРёСЏ РѕРїРµСЂР°С†РёР№ РѕС‚Р±РѕСЂР°).
 
-Также стоит обратить внимание на то, что нужно оставить только те наблюдения, в которых нет пустых наблюдений
+РўР°РєР¶Рµ СЃС‚РѕРёС‚ РѕР±СЂР°С‚РёС‚СЊ РІРЅРёРјР°РЅРёРµ РЅР° С‚Рѕ, С‡С‚Рѕ РЅСѓР¶РЅРѕ РѕСЃС‚Р°РІРёС‚СЊ С‚РѕР»СЊРєРѕ С‚Рµ РЅР°Р±Р»СЋРґРµРЅРёСЏ, РІ РєРѕС‚РѕСЂС‹С… РЅРµС‚ РїСѓСЃС‚С‹С… РЅР°Р±Р»СЋРґРµРЅРёР№
 
- 1)	Выбрать все домохозяйства, в которых общая активная потребляемая мощность превышает 5 кВт.
+ 1)	Р’С‹Р±СЂР°С‚СЊ РІСЃРµ РґРѕРјРѕС…РѕР·СЏР№СЃС‚РІР°, РІ РєРѕС‚РѕСЂС‹С… РѕР±С‰Р°СЏ Р°РєС‚РёРІРЅР°СЏ РїРѕС‚СЂРµР±Р»СЏРµРјР°СЏ РјРѕС‰РЅРѕСЃС‚СЊ РїСЂРµРІС‹С€Р°РµС‚ 5 РєР’С‚.
 
- 2) 	Выбрать все домохозяйства, в которых вольтаж превышает 235 В. 
+ 2) Р’С‹Р±СЂР°С‚СЊ РІСЃРµ РґРѕРјРѕС…РѕР·СЏР№СЃС‚РІР°, РІ РєРѕС‚РѕСЂС‹С… РІРѕР»СЊС‚Р°Р¶ РїСЂРµРІС‹С€Р°РµС‚ 235 Р’. 
 
- 3)	Выбрать все домохозяйства, в которых сила тока лежит в пределах 19-20 А, для них обнаружить те, в которых стиральная машина и холодильных потребляют больше, чем бойлер и кондиционер.
+ 3)	Р’С‹Р±СЂР°С‚СЊ РІСЃРµ РґРѕРјРѕС…РѕР·СЏР№СЃС‚РІР°, РІ РєРѕС‚РѕСЂС‹С… СЃРёР»Р° С‚РѕРєР° Р»РµР¶РёС‚ РІ РїСЂРµРґРµР»Р°С… 19-20 Рђ, РґР»СЏ РЅРёС… РѕР±РЅР°СЂСѓР¶РёС‚СЊ С‚Рµ, РІ РєРѕС‚РѕСЂС‹С… СЃС‚РёСЂР°Р»СЊРЅР°СЏ РјР°С€РёРЅР° Рё С…РѕР»РѕРґРёР»СЊРЅС‹С… РїРѕС‚СЂРµР±Р»СЏСЋС‚ Р±РѕР»СЊС€Рµ, С‡РµРј Р±РѕР№Р»РµСЂ Рё РєРѕРЅРґРёС†РёРѕРЅРµСЂ.
 
- 4)	Выбрать случайным образом 500 000 домохозяйств (без повторов элементов выборки), для них вычислить средние величины всех 3-х групп потребления электрической энергии.
+ 4)	Р’С‹Р±СЂР°С‚СЊ СЃР»СѓС‡Р°Р№РЅС‹Рј РѕР±СЂР°Р·РѕРј 500 000 РґРѕРјРѕС…РѕР·СЏР№СЃС‚РІ (Р±РµР· РїРѕРІС‚РѕСЂРѕРІ СЌР»РµРјРµРЅС‚РѕРІ РІС‹Р±РѕСЂРєРё), РґР»СЏ РЅРёС… РІС‹С‡РёСЃР»РёС‚СЊ СЃСЂРµРґРЅРёРµ РІРµР»РёС‡РёРЅС‹ РІСЃРµС… 3-С… РіСЂСѓРїРї РїРѕС‚СЂРµР±Р»РµРЅРёСЏ СЌР»РµРєС‚СЂРёС‡РµСЃРєРѕР№ СЌРЅРµСЂРіРёРё.
 
- 5)	Выбрать те домохозяйства, после 18-00 потребляют более 6 кВт в минуту в среднем, среди отобранных определить те, в которых основное потребление электроэнергии в указанный промежуток времени приходится на стиральную машину, сушилку, холодильник и освещения (группа 2 является крупнейшей) , а затем выбрать каждый третий результат с первой половины и каждый четвертый результат со второй половины.
-
-
-####Ссылки:
+ 5)	Р’С‹Р±СЂР°С‚СЊ С‚Рµ РґРѕРјРѕС…РѕР·СЏР№СЃС‚РІР°, РїРѕСЃР»Рµ 18-00 РїРѕС‚СЂРµР±Р»СЏСЋС‚ Р±РѕР»РµРµ 6 РєР’С‚ РІ РјРёРЅСѓС‚Сѓ РІ СЃСЂРµРґРЅРµРј, СЃСЂРµРґРё РѕС‚РѕР±СЂР°РЅРЅС‹С… РѕРїСЂРµРґРµР»РёС‚СЊ С‚Рµ, РІ РєРѕС‚РѕСЂС‹С… РѕСЃРЅРѕРІРЅРѕРµ РїРѕС‚СЂРµР±Р»РµРЅРёРµ СЌР»РµРєС‚СЂРѕСЌРЅРµСЂРіРёРё РІ СѓРєР°Р·Р°РЅРЅС‹Р№ РїСЂРѕРјРµР¶СѓС‚РѕРє РІСЂРµРјРµРЅРё РїСЂРёС…РѕРґРёС‚СЃСЏ РЅР° СЃС‚РёСЂР°Р»СЊРЅСѓСЋ РјР°С€РёРЅСѓ, СЃСѓС€РёР»РєСѓ, С…РѕР»РѕРґРёР»СЊРЅРёРє Рё РѕСЃРІРµС‰РµРЅРёСЏ (РіСЂСѓРїРїР° 2 СЏРІР»СЏРµС‚СЃСЏ РєСЂСѓРїРЅРµР№С€РµР№) , Р° Р·Р°С‚РµРј РІС‹Р±СЂР°С‚СЊ РєР°Р¶РґС‹Р№ С‚СЂРµС‚РёР№ СЂРµР·СѓР»СЊС‚Р°С‚ СЃ РїРµСЂРІРѕР№ РїРѕР»РѕРІРёРЅС‹ Рё РєР°Р¶РґС‹Р№ С‡РµС‚РІРµСЂС‚С‹Р№ СЂРµР·СѓР»СЊС‚Р°С‚ СЃРѕ РІС‚РѕСЂРѕР№ РїРѕР»РѕРІРёРЅС‹.
 
 
-*https://archive.ics.uci.edu/ml/datasets/Individual+household+electric+power+consumption
-
-*http://pandas.pydata.org/pandas-docs/version/0.15.2/index.html
-
-*https://www.tutorialspoint.com/python_pandas/python_pandas_dataframe.htm
+#### РЎСЃС‹Р»РєРё:
 
 
-*http://scipy-lectures.github.io/intro/numpy/numpy.html
+* https://archive.ics.uci.edu/ml/datasets/Individual+household+electric+power+consumption
 
-*https://docs.python.org/2/library/timeit.html
+* http://pandas.pydata.org/pandas-docs/version/0.15.2/index.html
 
-*https://www.programcreek.com/python/example/1834/timeit.Timer
+* https://www.tutorialspoint.com/python_pandas/python_pandas_dataframe.htm
+
+
+* http://scipy-lectures.github.io/intro/numpy/numpy.html
+
+* https://docs.python.org/2/library/timeit.html
+
+* https://www.programcreek.com/python/example/1834/timeit.Timer
+
+* https://archive.ics.uci.edu/ml/machine-learning-databases/00235/household_power_consumption.zip
 
 
