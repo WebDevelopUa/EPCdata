@@ -4,7 +4,7 @@
 # и реализации процедур для формирования выборок
 # pandas это высокоуровневая Python библиотека для анализа данных
 # https://jeffdelaney.me/blog/useful-snippets-in-pandas/
-
+# https://docs.python.org/2/library/timeit.html
 
 import pandas as pd
 
@@ -30,15 +30,12 @@ def read_csv_file():
     return df
 
 
+# создадим функцию для экспорта первых 20 строк даных с DataFrame в новый файл в папке csv
+def first_20_rows():
+    csv_data = read_csv_file()
+    csv_data[:20].to_csv('csv/export_data2.csv')
+
+
 # выполнить скрипт (Run ... )
 if __name__ == '__main__':
-    csv_data = read_csv_file()
-
-    # вывод всей таблицы
-    # print(csv_data)
-
-    # вывод первых 20 строк данных таблицы (для проверки работоспособности скрипта)
-    print csv_data[:20]
-
-    # экспорт первых 20 строк даных с DataFrame в новый файл в папке csv (для настройки экспорта отфильтрованных данных)
-    csv_data[:20].to_csv('csv/export_data1.csv')
+    first_20_rows()
