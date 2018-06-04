@@ -3,6 +3,7 @@
 # электрической энергии домохозяйствами, собранных в течение 47 месяцев (12.2006 — 11.2010)
 # https://docs.python.org/2/library/timeit.html
 # http://wesmckinney.com/blog/a-new-high-performance-memory-efficient-file-parser-engine-for-pandas/
+# https://www.geeksforgeeks.org/timeit-python-examples/
 
 import time
 import pandas as pd
@@ -33,7 +34,7 @@ def pandas_timings(exclude=()):
         start = time.time()
         table = pd.read_csv(path,
                             engine='python',
-                            delimiter=';',
+                            delimiter=delim,
                             skiprows=1,
                             index_col=False,
                             header=1,
