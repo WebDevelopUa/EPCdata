@@ -1,6 +1,7 @@
 # exclude extracted file from archive: https://archive.ics.uci.edu/ml/machine-learning-databases/00235/household_power_consumption.zip
 csv-raw/household_power_consumption.txt
 csv-raw/household_power_consumption.csv
+csv/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

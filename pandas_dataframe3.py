@@ -5,12 +5,6 @@
 
 import pandas as pd
 
-# присваиваем переменным имена файлов, с которыми будем работать
-filename1 = 'household_cut.csv'
-filename2 = 'household_power_consumption.csv'
-output_file1 = 'export_data_cut_one'
-output_file2 = 'export_data_task_one'
-
 # загрузим файл .csv с помощью функции read_csv() и отформатируем вывод данных
 df = pd.read_csv('csv-raw/household_power_consumption.csv',
                  engine='python',

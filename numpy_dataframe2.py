@@ -2,12 +2,6 @@
 # Python скрипт для загрузки в NumPy Dataframe данных с информации об основных расходах
 # электрической энергии домохозяйствами, собранных в течение 47 месяцев (12.2006 — 11.2010)
 # и реализации процедур для формирования выборок
-# https://docs.python.org/2/library/timeit.html
-# https://docs.scipy.org/doc/numpy-1.13.0/user/quickstart.html
-# https://www.geeksforgeeks.org/numpy-in-python-set-1-introduction/
-# https://www.geeksforgeeks.org/numpy-python-set-2-advanced/
-# https://docs.scipy.org/doc/numpy/reference/generated/numpy.genfromtxt.html
-# https://docs.scipy.org/doc/numpy-1.13.0/user/basics.io.genfromtxt.html
 
 # You can install packages via commands such as:
 # python -m pip install numpy
@@ -18,11 +12,13 @@ import numpy as np
 # присваиваем переменным имена файлов, которые будем тестировать, передавая в функцию
 filename1 = 'household_cut.csv'
 filename2 = 'household_power_consumption.csv'
+output_file1 = 'export_data_cut_one_np'
+output_file2 = 'export_data_task_one_np'
 
 
 # создадим функцию для загрузки содержимого файла (.csv) в NumPy с помощью функции recfromtxt()
 # можно использовать аналогичные функции: genfromtxt(), loadtxt(), recfromcsv()
-def read_csv_file(filename):
+def read_csv_file_np(filename):
     my_data = np.recfromtxt('csv-raw/' + filename,
                             delimiter=';',
                             # dtype=None,
@@ -36,5 +32,4 @@ def read_csv_file(filename):
 
 
 # вывод данных файлов в DataFrame
-print(read_csv_file(filename1))
-print(read_csv_file(filename2))
+print(read_csv_file_np(filename2))
