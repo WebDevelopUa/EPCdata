@@ -90,7 +90,10 @@ class SpyreUploadFile(server.App):
 
             # https://docs.python.org/2/library/csv.html
             df = pd.read_csv(self.upload_file,
-                             delimiter=';',
+                             # delimiter=';',
+                             # delimiter=',',
+                             # delimiter='; |, |\*|\n',
+                             delimiter=';|,',
                              engine='python',
                              index_col=False,
                              header=1,
