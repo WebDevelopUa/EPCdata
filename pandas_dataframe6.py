@@ -3,15 +3,15 @@
 # электрической энергии домохозяйствами, собранных в течение 47 месяцев (12.2006 — 11.2010)
 # и реализации процедур для формирования выборок
 
-# TASK #1 - выбрать все домохозяйства, в которых общая активная потребляемая мощность превышает 5 кВт
+# TASK #2 - Выбрать все домохозяйства, в которых вольтаж превышает 235 В.
 
 import pandas as pd
 
 # присваиваем переменным имена файлов, с которыми будем работать
 filename1 = 'household_cut.csv'
 filename2 = 'household_power_consumption.csv'
-output_file1 = 'export_data_cut_1st_pd.csv'
-output_file2 = 'export_data_task_1st_pd.csv'
+output_file1 = 'export_data_cut_2nd_pd.csv'
+output_file2 = 'export_data_task_2nd_pd.csv'
 
 
 def read_csv_file_pd(filename):
@@ -24,8 +24,8 @@ def read_csv_file_pd(filename):
                             "Global_intensity", "Sub_metering_1", "Sub_metering_2", "Sub_metering_3"],
                      )
 
-    # TASK #1 - выбрать все домохозяйства, в которых общая активная потребляемая мощность превышает 5 кВт
-    return df[(df['Global_active_power'] > '5') & (df['Global_active_power'] != '?')]
+    # TASK #2 - Выбрать все домохозяйства, в которых вольтаж превышает 235 В.
+    return df[(df['Voltage'] > '235') & (df['Voltage'] != '?')]
 
 
 # экспорт даных с DataFrame в новый файл в папке csv

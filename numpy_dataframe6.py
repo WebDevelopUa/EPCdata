@@ -3,11 +3,7 @@
 # электрической энергии домохозяйствами, собранных в течение 47 месяцев (12.2006 — 11.2010)
 # и реализации процедур для формирования выборок
 
-# TASK #1 - выбрать все домохозяйства, в которых общая активная потребляемая мощность превышает 5 кВт
-
-# https://www.dataquest.io/blog/numpy-tutorial-python/
-# https://docs.scipy.org/doc/numpy/reference/arrays.ndarray.html
-# http://www.djmannion.net/psych_programming/fundamentals/arrays/arrays.html
+# TASK #2 - Выбрать все домохозяйства, в которых вольтаж превышает 235 В.
 
 import numpy as np
 import csv
@@ -15,8 +11,8 @@ import csv
 # присваиваем переменным имена файлов, которые будем тестировать, передавая в функцию
 filename1 = 'household_cut.csv'
 filename2 = 'household_power_consumption.csv'
-output_file1 = 'export_data_cut_1st_np.csv'
-output_file2 = 'export_data_task_1st_np.csv'
+output_file1 = 'export_data_cut_2nd_np.csv'
+output_file2 = 'export_data_task_2nd_np.csv'
 
 
 # создадим функцию для загрузки содержимого файла (.csv) в NumPy с помощью функции recfromtxt()
@@ -31,16 +27,10 @@ def read_csv_file_np(filename):
 
                             )
 
-    # return np_data
-    # выдод данных [ряд, столбец] c 0 позиции
-    # return np_data[1, 2]
-    # return np_data[:, 2] > '5'
+    # TASK #2 - Выбрать все домохозяйства, в которых вольтаж превышает 235 В
+    # выдод данных [ряд, столбец] c 0 позиции (: - все данные рядов, определенного столбца)
+    return np_data[(np_data[:, 4] > '235') & (np_data[:, 4] != '?')]
 
-    # TASK #1 - выбрать все домохозяйства, в которых общая активная потребляемая мощность превышает 5 кВт
-    return np_data[(np_data[:, 2] > '5') & (np_data[:, 2] != '?')]
-
-
-# print(read_csv_file_np(filename2))
 
 # экспорт даных в новый файл в папке csv
 with open('csv/' + output_file2, 'wb') as new_file:
